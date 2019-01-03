@@ -195,7 +195,7 @@ function gettankup() {
 		case '6':
 		case '16':
 		case '18':
-		tankname = tkA;
+		tankname = tkA.slice();
 		break;
 
 		case '7':
@@ -204,25 +204,25 @@ function gettankup() {
 		case '13':
 		case '14':
 		case '15':
-		tankname = tkB;
+		tankname = tkB.slice();
 		break;
 
 		case '10':
 		case '12':
-		tankname = tkC;
+		tankname = tkC.slice();
 		break;
 
 		case '11':
 		case '31':
-		tankname = tkD;
+		tankname = tkD.slice();
 		break;
 		
 		case '17':
-		tankname = tkE;
+		tankname = tkE.slice();
 		break;
 		
 		case '19':
-		tankname = tkF;
+		tankname = tkF.slice();
 		break;
 		
 		case '20':
@@ -231,48 +231,48 @@ function gettankup() {
 		case '24':
 		case '25':
 		case '26':
-		tankname = tkG;
+		tankname = tkG.slice();
 		break;
 		
 		case '27':
-		tankname = tkH;
+		tankname = tkH.slice();
 		break;
 		
 		case '28':
-		tankname = tkI;
+		tankname = tkI.slice();
 		break;
 		
 		case '29':
 		case '30':
-		tankname = tkJ;
+		tankname = tkJ.slice();
 		break;
 		
 		case '32':
 		case '33':
 		case '34':
 		case '35':
-		tankname = tkK;
+		tankname = tkK.slice();
 		break;
 		
 		case '36':
 		case '37':
-		tankname = tkL;
+		tankname = tkL.slice();
 		break;
 		
 		case '38':
 		case '39':
-		tankname = tkM;
+		tankname = tkM.slice();
 		break;
 		
 		case '40':
-		tankname = tkN;
+		tankname = tkN.slice();
 		break;
 		
 		case '41':
 		case '42':
 		case '43':
 		case '44':
-		tankname = tkO;
+		tankname = tkO.slice();
 		break;
 		
 		case '45':
@@ -281,12 +281,12 @@ function gettankup() {
 		case '48':
 		case '49':
 		case '50':
-		tankname = tkP;
+		tankname = tkP.slice();
 		break;
 		
 		case '51':
 		case '52':
-		tankname = tkQ;
+		tankname = tkQ.slice();
 		break;
 		
 		case '53':
@@ -295,11 +295,11 @@ function gettankup() {
 		case '56':
 		case '57':
 		case '58':
-		tankname = tkR;
+		tankname = tkR.slice();
 		break;
 		
 		case '59':
-		tankname = tkS;
+		tankname = tkS.slice();
 		break;
 		
 		case '60':
@@ -308,35 +308,35 @@ function gettankup() {
 		case '63':
 		case '64':
 		case '65':
-		tankname = tkT;
+		tankname = tkT.slice();
 		break;
 		
 		case 'O1':
 		case 'O2':
-		tankname = tkU;
+		tankname = tkU.slice();
 		break;
 		
 		case 'O3':
 		case 'O4':
-		tankname = tkV;
+		tankname = tkV.slice();
 		break;
 		
 		case 'O5':
 		case 'O6':
-		tankname = tkW;
+		tankname = tkW.slice();
 		break;
 		
 		case 'R1':
 		case 'R2':
-		tankname = tkX;
+		tankname = tkX.slice();
 		break;
 		
 		case 'stella pan':
-		tankname = tkY;
+		tankname = tkY.slice();
 		break;
 		
 		case 'mixer':
-		tankname = tkZ;
+		tankname = tkZ.slice();
 		break;
 	};
 	calcup();
