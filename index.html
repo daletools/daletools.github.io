@@ -1,0 +1,25 @@
+<html>
+
+	<head>
+	<link rel="stylesheet" href="w3.css">
+	</head>
+
+	<body>
+		<div class="w3-container w3-third">
+			<h1>Tank Volume Calculator</h1></br>
+			<span>Tank Number</span>
+			<input class="w3-input w3-border" type="string" id="tank"><br>
+			<span>Measurement</span>
+			<input class="w3-input w3-border" type="string" id="d"><br>
+			<span>From </span><br>
+			<button class="w3-button" onclick="gettankdown()">Top Down</button><br>
+			<button class="w3-button" onclick="gettankup()">Bottom Up</button><br>
+			<span>Volume: </span><span id="volume">0</span>
+			<span> / </span><span id="maxvolume">0</span><span> L</span>
+		</div>
+		
+		<script type="text/javascript" src="tankvol.js"></script>
+
+	</body>
+
+</html>
