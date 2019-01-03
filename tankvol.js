@@ -353,3 +353,16 @@ function calcdown(){
 	document.getElementById("volume").innerHTML = v;
 	document.getElementById("maxvolume").innerHTML = vm;
 }
+
+function calcup(){
+	var r = tankname[0];
+	var t = tankname[1];
+	var th = tankname[2];
+	var b = tankname[3];
+	var bh = tankname[4];
+	var vm = tankname[5];
+	var d = document.getElementById("d").value;
+	var v = (r * d) - b;
+	document.getElementById("volume").innerHTML = v;
+	document.getElementById("maxvolume").innerHTML = vm;
+}
