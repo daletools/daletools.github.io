@@ -1,0 +1,134 @@
+<html>
+<head>
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="gmtools.css">
+</head>
+<body style="background-image:url('gmwide.jpg');">
+
+<div class="w3-bar w3-black w3-border w3-border-amber">											<!--Menu-->
+	<button class="w3-bar-item w3-button w3-dark-grey w3-margin-right" onclick="openTab('TankCalc')">Tank Calculator</button>
+	<button class="w3-bar-item w3-button w3-dark-grey w3-margin-right" onclick="openTab('KMS')">Sulphur Calculator</button>
+	<button class="w3-bar-item w3-button w3-dark-grey w3-margin-right" onclick="openTab('Nutrient')">Nutrient Additions</button>
+	<button class="w3-bar-item w3-button w3-dark-grey" onclick="openTab('Alcohol')">Alcohol Calculator</button>
+	</div>
+	
+<div id="TankCalc" class="tab" style="display:none">																		<!--Tank Calculator-->
+<div class="w3-sidebar w3-bar-block w3-black w3-border w3-border-amber" style="width:220px">
+	<button class="w3-bar-item w3-button w3-dark-grey w3-margin-top" onclick="subTab('Single')">Single Tank</button>
+	<button class="w3-bar-item w3-button  w3-dark-grey w3-margin-top" onclick="subTab('Balance')">Balance Tanks</button>
+</div>
+
+<div style="margin-left:230px" class="w3-container w3-third w3-white w3-margin-top subtab" id="Single">						<!--Single Tank-->
+			<h1>Tank Volume Calculator</h1></br>
+			<span>Tank Number</span>
+			<input class="w3-input w3-border" type="string" id="tank"><br>
+			<span>Measurement</span>
+			<input class="w3-input w3-border" type="string" id="d"><br>
+			<span>From </span><br>
+			<button class="w3-button w3-dark-grey w3-border-amber w3-border" onclick="gettankdown()">Top Down</button><br><br>
+			<button class="w3-button w3-dark-grey w3-border-amber w3-border" onclick="gettankup()">Bottom Up</button><br>
+			<span>Volume: </span><span id="volume">0</span>
+			<span> / </span><span id="maxvolume">0</span><span> L</span>
+		</div>
+<div style="margin-left:230px" class="w3-container w3-twothird w3-white w3-margin-top subtab" id="Balance" style="display:none">			<!--Balance Tanks-->
+			<h1>Balance Tanks</h1></br>
+			<span>Transfer volume</span>
+			<input class="w3-input w3-border" type="string" id="inputvol"><br>
+			<span>to tank(s)</span>
+			<div id="map"></div>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(1)" id="1">1</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(2)" id="2">2</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(3)" id="3">3</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(4)" id="4">4</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(5)" id="5">5</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(6)" id="6">6</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(7)" id="7">7</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(8)" id="8">8</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(9)" id="9">9</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(10)" id="10">10</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(11)" id="11">11</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(12)" id="12">12</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(13)" id="13">13</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(14)" id="14">14</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(15)" id="15">15</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(16)" id="16">16</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(17)" id="17">17</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(18)" id="18">18</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(19)" id="19">19</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(20)" id="20">20</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(21)" id="21">21</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(22)" id="22">22</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(23)" id="23">23</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(24)" id="24">24</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(25)" id="25">25</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(26)" id="26">26</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(27)" id="27">27</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(28)" id="28">28</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(29)" id="29">29</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(30)" id="30">30</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(31)" id="31">31</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(32)" id="32">32</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(33)" id="33">33</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(34)" id="34">34</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(35)" id="35">35</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(36)" id="36">36</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(37)" id="37">37</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(38)" id="38">38</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(39)" id="39">39</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(40)" id="40">40</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(41)" id="41">41</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(42)" id="42">42</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(43)" id="43">43</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(44)" id="44">44</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(45)" id="45">45</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(46)" id="46">46</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(47)" id="47">47</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(48)" id="48">48</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(49)" id="49">49</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(50)" id="50">50</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(51)" id="51">51</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(52)" id="52">52</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(53)" id="53">53</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(54)" id="54">54</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(55)" id="55">55</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(56)" id="56">56</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(57)" id="57">57</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(58)" id="58">58</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(59)" id="59">59</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(60)" id="60">60</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(61)" id="61">61</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(62)" id="62">62</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(63)" id="63">63</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(64)" id="64">64</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(65)" id="65">65</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(66)" id="66">O1</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(67)" id="67">O2</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(68)" id="68">O3</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(69)" id="69">O4</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(70)" id="70">O5</button></br>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(71)" id="71">O6</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(72)" id="72">R1</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(73)" id="73">R2</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(74)" id="74">Stella Pan</button>
+			<button class="w3-button w3-dark-grey w3-margin-bottom w3-tiny" onclick="destinationTank(75)" id="75">Mixer</button>
+			<button class="w3-button w3-red w3-margin-bottom" onclick="balancecalc()">Balance</button>
+			<button class="w3-button w3-red w3-margin-bottom" onclick="fillcalc()">Fill</button>
+
+
+</div>
+<div id="KMS" class="tab" style="display:none">														<!--KMS Calculator-->
+<h2>KMS Calculator Goes Here</h2>
+</div>
+<div id="Nutrient" class="tab" style="display:none">												<!--Nutrient Calculator-->
+<h2>Nutrient Calculator Goes Here</h2>
+</div>
+<div id="Alcohol" class="tab" style="display:none">													<!--Alcohol Calculator-->
+<h1>Alcohol Calculator</h1><br>
+
+</div>
+																								<!--Javascript Files-->
+<script type="text/javascript" src="gmtools.js"></script>
+<script type="text/javascript" src="tankvol-object.js"></script>
+<script type="text/javascript" src="raphael.min.js"></script>
+</body>
+</html>
