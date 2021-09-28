@@ -142,6 +142,6 @@ function send() {
 		enter = 0;
 	}
 }
-document.addEventListener(onkeydown.location, send(enter));
+document.addEventListener(onkeydown().location, send(enter));
 
 
