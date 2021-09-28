@@ -132,10 +132,11 @@ function balancecalc() {
 	
 }
 
-var enter = event.key;
-if (enter == "enter"){
-	getTankdown();
-	enter = 0;
+document.addEventListener(onkeydown, enter);
+function enter(event){
+	let e = event.key
+	if (e == "enter" || "ENTER"){
+		gettankdown;
+	}
 };
-
 
