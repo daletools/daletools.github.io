@@ -134,6 +134,7 @@ function balancecalc() {
 
 var enter = 0;
 function send() {
+	document.keydown.keyCode = enter;
 	if (enter == 13){
 		getTankDown();
 		enter = 0;
@@ -142,6 +143,6 @@ function send() {
 		enter = 0;
 	}
 }
-document.addEventListener(onkeydown().location, send(enter));
+document.addEventListener(onkeydown, send());
 
 
