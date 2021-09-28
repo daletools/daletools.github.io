@@ -132,11 +132,10 @@ function balancecalc() {
 	
 }
 
-document.addEventListener(onkeydown, enter);
-function enter(event){
-	let e = event.key
-	if (e == "enter" || "ENTER"){
-		gettankdown;
+document.getElementById("d").addEventListener("keydown", check);
+function check () {
+	let e = event.key;
+	if (e = "enter"){
+		gettankdown();
 	}
 };
-
