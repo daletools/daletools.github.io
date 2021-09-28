@@ -131,3 +131,17 @@ function balancecalc() {
 	}
 	
 }
+
+var enter = 0;
+function send() {
+	if (enter == 13){
+		getTankDown();
+		enter = 0;
+	}
+	else {
+		enter = 0;
+	}
+}
+document.addEventListener(onkeydown.location, send(enter));
+
+
