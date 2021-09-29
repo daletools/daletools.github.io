@@ -98,13 +98,13 @@ function gettankdown() {
 	tank.fetchParams("tank");
 	tank.volfromTop();
 //send results to page
-	document.getElementById("volume").innerHTML = v;
+	document.getElementById("volume").innerHTML = Math.round(v);
 	document.getElementById("maxvolume").innerHTML = tank.volume;
 }
 function gettankup() {
 	tank.fetchParams("tank");
 	tank.volfromBottom();
-	document.getElementById("volume").innerHTML = v;
+	document.getElementById("volume").innerHTML = Math.round(v);
 	document.getElementById("maxvolume").innerHTML = tank.volume;
 }
 function destinationTank(id) {
