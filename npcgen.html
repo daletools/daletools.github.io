@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NPC Generator</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="main.js" type="module" defer></script>
+        <link rel="icon" type="image/x-icon" href="/favicon.png">
+    </head>
+
+    <body>
+
+        <section class="left">
+            <section id="instructions">
+                Placeholder text, instructions go here.
+            </section>
+
+            <section id="input">
+
+                <div>
+                    Name:
+                    <input type="text" id="nameInput"><br>
+
+                    NPC Race: 
+                    <input type="text" id="raceInput" list="races"><br>
+                    <datalist id="races">
+                        <option value="Dragonborn">
+                        <option value="Dwarf">
+                        <option value="Elf">
+                        <option value="Gnome">
+                        <option value="Half-Elf">
+                        <option value="Half-Orc">        
+                        <option value="Human"> 
+                        <option value="Halfling">
+                        <option value="Tiefling">
+                    </datalist>
+
+                    Age:
+                    <input type="range" id="ageInput"><br>
+
+                    Profession:
+                    <input type="text" id="professionInput"><br>
+
+                    Home Region:
+                    <input type="text" id="homeInput"><br>
+
+                    Temperament:
+                    <input type="text" id="temperamentInput"><br>
+
+                    Bond:
+                    <input type="text" id="bondInput"><br>
+
+                    Ideal:
+                    <input type="text" id="idealInput"><br>
+
+                    Flaw:
+                    <input type="text" id="flawInput"><br>
+
+                    Alignment:
+                    <select id="alignmentInput">
+                        <option value=null>Random</option>
+                        <option value="Unaligned">Unaligned</option>
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Neutral Good">Neutral Good</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
+                    </select>
+
+                    <button id="btn">Generate</button>
+                </div>
+                
+            </section>
+        </section>
+
+        <aside id="results">
+            <div id="output"></div>
+            <textarea id="jsonOutput" readonly cols="40" rows="3">TBD OUTPUT</textarea>
+        </aside>
+    </body>
+
+</html>
