@@ -1,0 +1,42 @@
+* {
+    background: black;
+    color: aliceblue;
+}
+
+body {
+    margin: auto;
+    align-items: center;
+    display: block;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+body * {
+    border: 1px solid black;
+    margin: auto;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+}
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    margin: auto;
+    padding: 10px;
+    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    background: darkgray;
+}
+
+.navButton {
+    padding: 10px;
+    border: 1px solid black;
+    background: white;
+    color: black;
+}
