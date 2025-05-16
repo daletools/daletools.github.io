@@ -92,7 +92,6 @@ function renderProjects(projects) {
         </div>
         <div class="card-links">
           ${project.githubUrl ? `<a href="${project.githubUrl}" target="_blank" class="github-link">GitHub</a>` : ''}
-          ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" class="live-link">Live Demo</a>` : ''}
         </div>
       </div>
     </div>
@@ -111,13 +110,13 @@ function adjustMainHeight() {
     const nav = document.getElementById('nav');
     const main = document.getElementById('main');
     const navHeight = nav.offsetHeight;
+    const viewportHeight = window.innerHeight;
 
-    main.style.minHeight = `calc(100vh - ${navHeight}px)`;
+    // Use actual viewport height minus nav height
+    main.style.minHeight = `${viewportHeight - navHeight}px`;
 }
 
 window.addEventListener('load', adjustMainHeight);
-
-// Optional: Run on resize in case nav height changes responsively
 window.addEventListener('resize', adjustMainHeight);
 
 

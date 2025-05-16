@@ -5,8 +5,6 @@ export class Boid {
         this.acceleration = { x: 0, y: 0 };
         this.maxForce = 0.2;
         this.maxSpeed = 2;
-        this.desiredSeparation = 18;
-        this.id = id;
         this.perceptionRadius = 40;
     }
 
