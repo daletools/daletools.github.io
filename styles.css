@@ -2,31 +2,66 @@
     color: aliceblue;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background: black;
     margin: auto;
     align-items: center;
+    position: relative;
     display: block;
     overflow: hidden;
     overflow-y: scroll;
 }
 
-body * {
-    margin: auto;
-    align-items: center;
+section {
+    min-height: 100vh;
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+}
+
+body {
+    min-height: 100vh;
+    position: relative; /* For absolute positioning context */
 }
 
 canvas {
-    display: block;
+    position: fixed; /* Changed from display: block */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places canvas behind all other content */
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+#mouse-tracker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: all; /* Will capture mouse events */
+    opacity: 0; /* Invisible */
+}
+
+main {
+    min-height: calc(100vh - 60px);
+    position: relative;
 }
 
 nav {
+    height: 60px;
     display: flex;
     position: sticky;
-    bottom: 0;
+    top: 0;
     margin: auto;
     padding: 10px;
-    z-index: 1;
+    z-index: 2;
     align-items: center;
     justify-content: space-between;
     width: 40%;
@@ -41,11 +76,79 @@ nav {
 }
 
 #title {
-    position: absolute;
-    top: 50%;
+    position: absolute; /* Changed back to absolute */
+    top: 50vh; /* Center relative to viewport */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
     background: transparent;
+    z-index: 1;
+    margin-top: 0; /* Reset any margins */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    background: darkslateblue;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.card-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-links a {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.github-link {
+    background: #24292e;
+    color: white;
+}
+
+.live-link {
+    background: #0366d6;
+    color: white;
 }

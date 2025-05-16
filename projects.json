@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Project 1",
+    "description": "Description goes here",
+    "technologies": ["JavaScript", "HTML", "CSS"],
+    "githubUrl": "https://github.com/yourusername/project1",
+    "image": "images/project1.png",
+    "tags": ["web", "frontend", "interactive"]
+  },
+  {
+    "title": "Project 2",
+    "description": "Another project",
+    "technologies": ["Python", "Django"],
+    "githubUrl": "https://github.com/yourusername/project2",
+    "image": "images/project2.png",
+    "tags": ["backend", "api"]
+  }
+]

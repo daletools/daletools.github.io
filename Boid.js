@@ -4,7 +4,7 @@ export class Boid {
         this.vel = { x: Math.random() * 2 - 1, y: Math.random() * 2 - 1 };
         this.acceleration = { x: 0, y: 0 };
         this.maxForce = 0.2;
-        this.maxSpeed = 4;
+        this.maxSpeed = 2;
         this.desiredSeparation = 18;
         this.id = id;
         this.perceptionRadius = 40;
@@ -16,8 +16,8 @@ export class Boid {
         let avoidance = this.avoidance(boidArray, title, mouse);
 
 
-        this.acceleration.x += alignment.x + cohesion.x + avoidance.x;
-        this.acceleration.y += alignment.y + cohesion.y + avoidance.y;
+        this.acceleration.x += alignment.x + cohesion.x + (avoidance.x);
+        this.acceleration.y += alignment.y + cohesion.y + (avoidance.y);
 
         this.vel.x += this.acceleration.x;
         this.vel.y += this.acceleration.y;
@@ -30,6 +30,7 @@ export class Boid {
 
         this.acceleration.x = 0;
         this.acceleration.y = 0;
+
     }
 
     alignment(boidArray) {
@@ -148,7 +149,7 @@ export class Boid {
                 x: this.position.x - mouse.x,
                 y: this.position.y - mouse.y
             };
-            const weight = 5 / (distance * distance);
+            const weight = 50 / (distance * distance);
             steering.x += diff.x * weight;
             steering.y += diff.y * weight;
             total++;

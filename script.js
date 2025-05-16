@@ -62,13 +62,63 @@ function draw() {
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight - nav.offsetHeight;
 
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('projects.json');
+        const projects = await response.json();
+        renderProjects(projects);
+    } catch (error) {
+        console.error('Error loading projects:', error);
+        // Fallback content or error message
+        document.getElementById('projects-container').innerHTML = `
+      <p class="error">Unable to load projects. Please check back later.</p>
+    `;
+    }
+});
+
+function renderProjects(projects) {
+    const container = document.getElementById('projects-container');
+
+    container.innerHTML = projects.map(project => `
+    <div class="project-card" data-tags="${project.tags.join(' ')}">
+      <div class="card-image">
+        <img src="${project.image}" alt="${project.title}" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="technologies">
+          ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        </div>
+        <div class="card-links">
+          ${project.githubUrl ? `<a href="${project.githubUrl}" target="_blank" class="github-link">GitHub</a>` : ''}
+          ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" class="live-link">Live Demo</a>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
 window.addEventListener('resize', windowResize);
 
-canvas.addEventListener('mousemove', (event) => {
+document.getElementById('mouse-tracker').addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
-    mouse.x = event.clientX - rect.left;
-    mouse.y = event.clientY - rect.top;
+    mouse.x = event.clientX - rect.left + window.scrollX;
+    mouse.y = event.clientY - rect.top + window.scrollY;
 });
+
+function adjustMainHeight() {
+    const nav = document.getElementById('nav');
+    const main = document.getElementById('main');
+    const navHeight = nav.offsetHeight;
+
+    main.style.minHeight = `calc(100vh - ${navHeight}px)`;
+}
+
+window.addEventListener('load', adjustMainHeight);
+
+// Optional: Run on resize in case nav height changes responsively
+window.addEventListener('resize', adjustMainHeight);
 
 
 draw();
