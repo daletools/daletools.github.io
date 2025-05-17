@@ -1,18 +1,18 @@
 [
   {
-    "title": "Project 1",
-    "description": "Description goes here",
-    "technologies": ["JavaScript", "HTML", "CSS"],
-    "githubUrl": "https://github.com/yourusername/project1",
-    "image": "images/project1.png",
-    "tags": ["web", "frontend", "interactive"]
+    "title": "Ape Offside",
+    "description": "Ape Offside was our second-year group capstone project. It aggregates sports betting odds from an API, processes and displays them, with the option of asking a Gemini chatbot for insights based on relevant historical stats.",
+    "technologies": ["JavaScript", "React", "Python", "Django"],
+    "githubUrl": "https://github.com/daletools/ApeOffside",
+    "image": "images/ApeOffside.png",
+    "tags": ["web", "frontend", "backend"]
   },
   {
-    "title": "Project 2",
-    "description": "Another project",
-    "technologies": ["Python", "Django"],
-    "githubUrl": "https://github.com/yourusername/project2",
-    "image": "images/project2.png",
-    "tags": ["backend", "api"]
+    "title": "Boid of Prey",
+    "description": "Made for a game jam, Boid of Prey is an idle/incremental game centered around simulated flocks of birds. My focus were the 'boids' simulation elements and how they interact with the main gameplay loop. My friend and teammate who owns the repo took point on the art, UI, and structure of nodes within the engine.",
+    "technologies": ["Godot", "GDscript"],
+    "githubUrl": "https://github.com/Kolbias/boidemic",
+    "image": "images/BoidOfPrey.png",
+    "tags": ["boids", "simulation"]
   }
 ]
